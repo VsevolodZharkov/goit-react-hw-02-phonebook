@@ -12,16 +12,17 @@ class App extends Component {
 
   addUserData = user => {
 		const { contacts } = this.state;
-		const a = contacts.filter(({name}) => name === user.name)
-		const b = a.map(user => user.name);
-		if(user.name === b[0]) {
-			alert( user.name + 'is already in contacts.' );
+		const a = contacts.find(({name}) => name === user.name)
+		console.log(a);
+		if(a) {
+			alert( user.name + ' is already in contacts.' );
 			return;
 		}
     this.setState(prevState => ({
       contacts: [...prevState.contacts , user],
     }));
   };
+	
 	handlerFilter = ({target: {value}}) => {
 		this.setState({filter: value})
 	}

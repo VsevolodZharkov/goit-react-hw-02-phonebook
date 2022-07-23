@@ -14,6 +14,7 @@ const ContactList = ({ usersList, deleteUser }) => {
   );
 };
 ContactList.propTypes = {
+	deleteUser: PropTypes.func.isRequired,
   usersList: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

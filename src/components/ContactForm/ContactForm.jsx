@@ -3,22 +3,34 @@ import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types'
 
 class ContactForm extends Component {
+	static propTypes = {
+		addUserData: PropTypes.func.isRequired
+	};
   state = {
     name: '',
     number: '',
   };
-
+	
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
+
+	resetForm = () => {
+		this.setState({ name: '', number: '' });
+	}
 
   onSubmit = event => {
     event.preventDefault();
     const id = nanoid();
     const user = { ...this.state, id };
-    this.props.addUserData(user);
+		if(user.name.trim() === '' || user.number.trim() === '' ) {
+			alert('Invalid data entry.')
+			return;
+		}
+		this.props.addUserData(user);
+		this.resetForm();
   };
-
+	
   render() {
     const { name, number } = this.state;
     return (
@@ -54,6 +66,7 @@ class ContactForm extends Component {
   }
 }
 ContactForm.propTypes = {
+	addUserData: PropTypes.func.isRequired,
 	name: PropTypes.string.isRequired,
 	number: PropTypes.string.isRequired
 };
