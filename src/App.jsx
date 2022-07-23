@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import { ContactForm  } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList'
-import {  Filter } from './Filter/Filter'
+import { ContactForm  } from './components/ContactForm/ContactForm';
+import { ContactList } from './components/ContactList/ContactList'
+import {  Filter } from './components/Filter/Filter'
 import PropTypes from 'prop-types'
-import '../index'
-export class App extends Component {
+import './index'
+class App extends Component {
   state = {
     contacts : [],
 		filter: '',
@@ -54,3 +54,4 @@ App.propTypes = {
 			filter: PropTypes.string.isRequired
 		})
 };
+export { App }

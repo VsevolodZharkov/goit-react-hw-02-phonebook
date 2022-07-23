@@ -16,7 +16,6 @@ code {
 
 form {
 	display: flex;
-    /* padding-top: 100px; */
     width: 350px;
     padding-left: 20px;
     flex-wrap: wrap;
