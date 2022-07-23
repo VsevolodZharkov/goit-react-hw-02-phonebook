@@ -40,10 +40,10 @@ class App extends Component {
     return (
       <>  
 				<h1>Phonebook</h1>
-        <ContactForm  addUserData={this.addUserData} />
+          <ContactForm  addUserData={this.addUserData} />
 				<h2>Contacts</h2>
-				<Filter filter={filter} handlerFilter={this.handlerFilter}/>
-				<ContactList usersList={this.getVisableUsers()} deleteUser={this.deleteUser}/>
+					<Filter filter={filter} handlerFilter={this.handlerFilter}/>
+					<ContactList usersList={this.getVisableUsers()} deleteUser={this.deleteUser}/>
       </>
     );
   }
