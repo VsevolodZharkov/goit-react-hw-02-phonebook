@@ -13,7 +13,6 @@ class App extends Component {
   addUserData = user => {
 		const { contacts } = this.state;
 		const a = contacts.find(({name}) => name === user.name)
-		console.log(a);
 		if(a) {
 			alert( user.name + ' is already in contacts.' );
 			return;
@@ -49,10 +48,4 @@ class App extends Component {
     );
   }
 }
-App.propTypes = {
-		state: PropTypes.shape({
-			contacts: PropTypes.arrayOf(PropTypes.object),
-			filter: PropTypes.string.isRequired
-		})
-};
 export { App }
