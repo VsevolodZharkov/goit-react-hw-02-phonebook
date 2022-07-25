@@ -65,7 +65,5 @@ class ContactForm extends Component {
     );
   }
 }
-ContactForm.propTypes = {
-	addUserData: PropTypes.func.isRequired
-}
+
 export { ContactForm };
